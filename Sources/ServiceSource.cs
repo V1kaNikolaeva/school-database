@@ -1,12 +1,34 @@
 ﻿using School.Models;
+using School;
 
 namespace School.Sources
 {
     public class ServiceSource
     {
         private SubjectModel _subject;
-
-        public bool selected;
+        private bool _selected;
+        private NewOrderForm _form;
+        public bool selected
+        {
+            get
+            {
+                return _selected;
+            }
+            set
+            {
+                _selected = value;
+                
+                if (selected)
+                {
+                    _form.currentOrder.AddService(_subject);
+                }
+                else
+                {
+                    _form.currentOrder.RemoveService(_subject);
+                }
+                _form.UpdateOrderTotal();
+            }
+        }
         public string subjectName
         {
             get { return _subject.subjectName; }
@@ -18,10 +40,13 @@ namespace School.Sources
         }
 
 
-        public ServiceSource(SubjectModel subject)
+        public ServiceSource(SubjectModel subject, NewOrderForm form)
         {
-            selected = false;
+            _selected = false;
             _subject = subject;
+            _form = form;
         }
     }
 }
+
+

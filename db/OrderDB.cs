@@ -9,10 +9,10 @@ namespace School.db
     {
         public OrderDB(
             int id,
-            DateTime dataCreate,
+            DateTime? dataCreate,
             //ClientModel client,
             bool removed = false
-        ) : base(id, dataCreate, /* client, */ removed)
+        ) : base(id, (DateTime)dataCreate, /* client, */ removed)
         {
 
         }

@@ -20,7 +20,7 @@ namespace School.db
             List<SubjectModel> subjects = new List<SubjectModel>();
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand command = conn.CreateCommand();
-            command.CommandText = "SELECT * FROM `Servises`";
+            command.CommandText = "SELECT * FROM `Services`"; //Ошибка в слове, когда создавалась бд
             using (MySqlDataReader reader = command.ExecuteReader())
             {
                 if (reader.HasRows)

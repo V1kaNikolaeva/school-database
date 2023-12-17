@@ -1,6 +1,6 @@
 ﻿namespace School
 {
-    partial class Form1
+    partial class NewOrderForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -32,11 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.servicesGridView = new System.Windows.Forms.DataGridView();
             this.ColumnServiceBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColumnServiceTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnServicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.costLabel = new System.Windows.Forms.Label();
+            this.costResultTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicesGridView)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +52,7 @@
             this.subjectsComboBox.FormattingEnabled = true;
             this.subjectsComboBox.Location = new System.Drawing.Point(124, 17);
             this.subjectsComboBox.Name = "subjectsComboBox";
-            this.subjectsComboBox.Size = new System.Drawing.Size(248, 33);
+            this.subjectsComboBox.Size = new System.Drawing.Size(726, 33);
             this.subjectsComboBox.TabIndex = 0;
             // 
             // label1
@@ -68,7 +70,7 @@
             this.OrderIdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.OrderIdTextBox.Location = new System.Drawing.Point(124, 85);
             this.OrderIdTextBox.Name = "OrderIdTextBox";
-            this.OrderIdTextBox.Size = new System.Drawing.Size(247, 20);
+            this.OrderIdTextBox.Size = new System.Drawing.Size(725, 20);
             this.OrderIdTextBox.TabIndex = 2;
             // 
             // groupBox1
@@ -78,20 +80,10 @@
             this.groupBox1.Controls.Add(this.servicesGridView);
             this.groupBox1.Location = new System.Drawing.Point(17, 168);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 273);
+            this.groupBox1.Size = new System.Drawing.Size(833, 176);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выберите услуги";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(124, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Найти";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // servicesGridView
             // 
@@ -102,9 +94,9 @@
             this.ColumnServiceBox,
             this.ColumnServiceTitle,
             this.ColumnServicePrice});
-            this.servicesGridView.Location = new System.Drawing.Point(6, 19);
+            this.servicesGridView.Location = new System.Drawing.Point(7, 17);
             this.servicesGridView.Name = "servicesGridView";
-            this.servicesGridView.Size = new System.Drawing.Size(342, 248);
+            this.servicesGridView.Size = new System.Drawing.Size(820, 153);
             this.servicesGridView.TabIndex = 0;
             // 
             // ColumnServiceBox
@@ -132,11 +124,47 @@
             this.ColumnServicePrice.Name = "ColumnServicePrice";
             this.ColumnServicePrice.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(124, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(725, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Найти";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // costLabel
+            // 
+            this.costLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.costLabel.AutoEllipsis = true;
+            this.costLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.costLabel.Location = new System.Drawing.Point(21, 347);
+            this.costLabel.Name = "costLabel";
+            this.costLabel.Size = new System.Drawing.Size(128, 23);
+            this.costLabel.TabIndex = 1;
+            this.costLabel.Text = "Стоимость:";
+            this.costLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // costResultTextBox
+            // 
+            this.costResultTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.costResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.costResultTextBox.Location = new System.Drawing.Point(155, 350);
+            this.costResultTextBox.Name = "costResultTextBox";
+            this.costResultTextBox.ReadOnly = true;
+            this.costResultTextBox.Size = new System.Drawing.Size(689, 24);
+            this.costResultTextBox.TabIndex = 5;
+            this.costResultTextBox.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 461);
+            this.ClientSize = new System.Drawing.Size(862, 461);
+            this.Controls.Add(this.costResultTextBox);
+            this.Controls.Add(this.costLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.OrderIdTextBox);
@@ -164,6 +192,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnServiceBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnServiceTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnServicePrice;
+        private System.Windows.Forms.Label costLabel;
+        private System.Windows.Forms.TextBox costResultTextBox;
     }
 }
 
